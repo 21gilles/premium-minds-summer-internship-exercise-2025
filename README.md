@@ -1,11 +1,11 @@
-# Mouse APth - Summer Internship Exercise
+# Mouse Path - Summer Internship Exercise
 
 ## O Problema
 
 Brincar aos labirintos é divertido mas alguém tem que verificar se os caminhos realmente funcionam.
 Vamos então criar um validador de caminhos!
 
-* Um caminho é definido por dois pontos finais indicados pelo X(são o início/fim ).
+* Um caminho é definido por dois pontos finais indicados pelo X (são o início/fim).
 * E as linhas podem ser o seguintes caracteres : 
 * `-` = direita/esquerda
 * `|` = cima/baixo
