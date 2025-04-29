@@ -22,7 +22,7 @@ public class MousePathServiceTest {
 
   @Test
   public void PersonNoChildrenTest() {
-    final char grid[][] = this.convert(new String[] {
+    final char[][] grid = this.convert(new String[] {
       "           ",
       "X---------X",
       "           ",
@@ -34,7 +34,7 @@ public class MousePathServiceTest {
 
   @Test
   public void PersonOneChildTest() {
-    final char grid[][] = this.convert(new String[] {
+    final char[][] grid = this.convert(new String[] {
       " X  ",
       " |  ",
       " +  ",
