@@ -1,14 +1,11 @@
 package com.premiumminds.internship.mousepath;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
 
-@RunWith(JUnit4.class)
 public class MousePathServiceTest {
 
   /**
@@ -21,7 +18,7 @@ public class MousePathServiceTest {
   };
 
   @Test
-  public void PersonNoChildrenTest() {
+  void PersonNoChildrenTest() {
     final char[][] grid = this.convert(new String[] {
       "           ",
       "X---------X",
@@ -33,7 +30,7 @@ public class MousePathServiceTest {
   }
 
   @Test
-  public void PersonOneChildTest() {
+  void PersonOneChildTest() {
     final char[][] grid = this.convert(new String[] {
       " X  ",
       " |  ",
