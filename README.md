@@ -51,8 +51,7 @@ Vai ser valorizado: o facto de fazerem testes extras, assim como, o algoritmo es
 
 ## Como correr os testes
 
-* Instalar o mvn [https://maven.apache.org/install.html]
-* Correr `mvn test`
+* Correr `./mvnw test`
 
 ## Dúvidas
 
