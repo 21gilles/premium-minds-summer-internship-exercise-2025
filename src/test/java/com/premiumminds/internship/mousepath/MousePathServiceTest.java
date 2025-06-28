@@ -5,17 +5,88 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-
 public class MousePathServiceTest {
 
-  /**
-   * The corresponding implementations to test.
-   *
-   * If you want, you can make others :)
-   *
-   */
   public MousePathServiceTest() {
-  };
+  }
+
+  @Test
+  void horizontalStraight() {
+    final char[][] grid = this.convert(new String[] {
+      "     ",
+      "X---X",
+      "     "
+    });
+    assertTrue(new MousePathService().isValidGrid(grid));
+  }
+
+  @Test
+  void verticalStraight() {
+    final char[][] grid = this.convert(new String[] {
+      "X  ",
+      "|  ",
+      "|  ",
+      "|  ",
+      "X  "
+    });
+    assertTrue(new MousePathService().isValidGrid(grid));
+  }
+
+  @Test
+  void simpleCorner() {
+    final char[][] grid = this.convert(new String[] {
+      "X-+  ",
+      "  |  ",
+      "  X  "
+    });
+    assertTrue(new MousePathService().isValidGrid(grid));
+  }
+
+  @Test
+  void adjacentEndpointsRow() {
+    final char[][] grid = this.convert(new String[] {
+      "XX"
+    });
+    assertTrue(new MousePathService().isValidGrid(grid));
+  }
+
+  @Test
+  void adjacentEndpointsCol() {
+    final char[][] grid = this.convert(new String[] {
+      "X",
+      "X"
+    });
+    assertTrue(new MousePathService().isValidGrid(grid));
+  }
+
+  @Test
+  void missingCorner() {
+    final char[][] grid = this.convert(new String[] {
+      "X-+X"
+    });
+    assertFalse(new MousePathService().isValidGrid(grid));
+  }
+
+  @Test
+  void loopPath() {
+    final char[][] grid = this.convert(new String[] {
+      "X-+-X",
+      "|   |",
+      "X---X"
+    });
+    assertFalse(new MousePathService().isValidGrid(grid));
+  }
+
+  @Test
+  void extraLineSegment() {
+    final char[][] grid = this.convert(new String[] {
+      "X-+  ",
+      "| |  ",
+      "X-+  ",
+      "  |X "
+    });
+    assertFalse(new MousePathService().isValidGrid(grid));
+  }
 
   @Test
   void PersonNoChildrenTest() {
@@ -24,9 +95,8 @@ public class MousePathServiceTest {
       "X---------X",
       "           ",
       "           "
-      });
-      ;
-      assertTrue(new MousePathService().isValidGrid(grid));
+    });
+    assertTrue(new MousePathService().isValidGrid(grid));
   }
 
   @Test
@@ -36,8 +106,8 @@ public class MousePathServiceTest {
       " |  ",
       " +  ",
       " X  "
-      });
-      assertFalse(new MousePathService().isValidGrid(grid));
+    });
+    assertFalse(new MousePathService().isValidGrid(grid));
   }
 
   private char[][] convert(String[] input) {
